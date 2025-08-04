@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const db = require('./models/db')
@@ -7,7 +8,8 @@ app.use(express.json());
 app.get('/',(req,res)=>{
     res.send('This is the Home Page')
 })
-require('dotenv').config();
+
+
 app.use("/",route)
 const Port = process.env.PORT || 3000;
 app.listen(Port, () => {
